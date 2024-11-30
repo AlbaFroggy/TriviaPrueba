@@ -33,6 +33,8 @@ window.addEventListener("load", () => {
 
     // Mostrar una pregunta al azar sin repetir
     // Mostrar la pregunta con el temporizador y las opciones
+// Mostrar una pregunta al azar sin repetir
+// Mostrar la pregunta con el temporizador y las opciones
 function mostrarPregunta() {
     if (trivia.length === 0 || preguntasVisitadas.length === trivia.length) {
         contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas!</p>";
@@ -53,9 +55,12 @@ function mostrarPregunta() {
     // Marcar esta pregunta como visitada
     preguntasVisitadas.push(indiceAleatorio);
 
-    const opcionesHTML = preguntaActual.opciones
+    // Barajar las opciones de respuesta aleatoriamente
+    const opcionesAleatorias = preguntaActual.opciones.sort(() => Math.random() - 0.5);
+
+    const opcionesHTML = opcionesAleatorias
         .map(opcion => `<button class="opcion">${opcion}</button>`)
-        .join('');
+        .join(''); // Crear el HTML de las opciones
 
     contenedorTrivia.innerHTML = `
         <p>${preguntaActual.pregunta}</p>
@@ -70,6 +75,7 @@ function mostrarPregunta() {
 
     // Iniciar el temporizador
     iniciarTemporizador();
+
 }
 
     // Iniciar el temporizador
