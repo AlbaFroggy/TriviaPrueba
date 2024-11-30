@@ -35,6 +35,7 @@ function mostrarPregunta() {
     // Verificar si ya no hay más preguntas disponibles
     if (preguntasVisitadas.length === trivia.length) {
         contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas disponibles!</p>";
+        preguntasVisitadas = []; // Reiniciar las preguntas visitadas
         return;
     }
 
@@ -183,6 +184,7 @@ function mostrarPregunta() {
             <p>Respuestas Incorrectas: ${respuestasIncorrectas}</p>
         `;
     }
+    
 
     // Finalizar el juego y mostrar el mensaje de victoria o derrota
     function terminarJuego(mensaje) {
@@ -203,7 +205,6 @@ function mostrarPregunta() {
     function reiniciarJuego() {
         respuestasCorrectas = 0;
         respuestasIncorrectas = 0;
-        preguntasVisitadas = []; // Reiniciar las preguntas visitadas
 
         btnGenerar.style.display = 'block'; // Volver a mostrar el botón de generar preguntas
         btnGenerar.disabled = false; // Habilitar el botón de generar preguntas
@@ -215,9 +216,8 @@ function mostrarPregunta() {
     // Registrar eventos
     btnGenerar.addEventListener('click', mostrarPregunta);
     contenedorTrivia.addEventListener('click', verificarRespuesta);
-    btnMasPreguntas.addEventListener('click', () => {
-        mostrarPregunta();
-    });
+    btnMasPreguntas.addEventListener('click', reiniciarJuego);
+
     
     // Cargar las preguntas al inicio
     cargarTrivia();
