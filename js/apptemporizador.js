@@ -30,38 +30,41 @@ window.addEventListener("load", () => {
             contenedorTrivia.textContent = "No se pudieron cargar las preguntas. Intenta de nuevo más tarde.";
         }
     }
-// Mostrar una pregunta al azar sin repetir con el temporizador y las opciones
-function mostrarPregunta() {
-    // Verificar si ya no hay más preguntas disponibles
-    if (preguntasVisitadas.length === trivia.length) {
-        contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas disponibles!</p>";
-        preguntasVisitadas = []; // Reiniciar las preguntas visitadas aquí
-        return;
-    }    
+    // Mostrar una pregunta al azar sin repetir con el temporizador y las opciones
+    function mostrarPregunta() {
+        // Verificar si ya no hay más preguntas disponibles
+        if (preguntasVisitadas.length === trivia.length) {
+            contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas disponibles!</p>";
+            preguntasVisitadas = []; // Reiniciar las preguntas visitadas aquí
 
-    // Ocultar el botón de "Generar Pregunta" mientras se muestra la trivia
-    btnGenerar.style.display = 'none';
+            // Mostrar el botón de reiniciar
+            btnReiniciar.style.display = 'block';
+            return;
+        }
 
-    // Elegir una pregunta aleatoria que no haya sido visitada
-    let indiceAleatorio;
-    do {
-        indiceAleatorio = Math.floor(Math.random() * trivia.length);
-    } while (preguntasVisitadas.includes(indiceAleatorio));
+        // Ocultar el botón de "Generar Pregunta" mientras se muestra la trivia
+        btnGenerar.style.display = 'none';
 
-    // Marcar la pregunta como visitada
-    preguntasVisitadas.push(indiceAleatorio);
+        // Elegir una pregunta aleatoria que no haya sido visitada
+        let indiceAleatorio;
+        do {
+            indiceAleatorio = Math.floor(Math.random() * trivia.length);
+        } while (preguntasVisitadas.includes(indiceAleatorio));
 
-    // Obtener la pregunta actual
-    preguntaActual = trivia[indiceAleatorio];
+        // Marcar la pregunta como visitada
+        preguntasVisitadas.push(indiceAleatorio);
 
-    // Barajar las opciones de respuesta aleatoriamente
-    const opcionesAleatorias = preguntaActual.opciones.sort(() => Math.random() - 0.5);
+        // Obtener la pregunta actual
+        preguntaActual = trivia[indiceAleatorio];
 
-    const opcionesHTML = opcionesAleatorias
-        .map(opcion => `<button class="opcion">${opcion}</button>`)
-        .join('');
+        // Barajar las opciones de respuesta aleatoriamente
+        const opcionesAleatorias = preguntaActual.opciones.sort(() => Math.random() - 0.5);
 
-    contenedorTrivia.innerHTML = `
+        const opcionesHTML = opcionesAleatorias
+            .map(opcion => `<button class="opcion">${opcion}</button>`)
+            .join('');
+
+        contenedorTrivia.innerHTML = `
         <p>${preguntaActual.pregunta}</p>
         <div>${opcionesHTML}</div>
         <p id="temporizador">Tiempo restante: ${tiempoLimite} segundos</p>
@@ -69,12 +72,12 @@ function mostrarPregunta() {
         <div id="contador"></div>
     `;
 
-    // Mostrar el contenedor de trivia después de cargar la pregunta
-    contenedorTrivia.style.display = 'block';
+        // Mostrar el contenedor de trivia después de cargar la pregunta
+        contenedorTrivia.style.display = 'block';
 
-    // Iniciar el temporizador
-    iniciarTemporizador();
-}
+        // Iniciar el temporizador
+        iniciarTemporizador();
+    }
 
 
     // Iniciar el temporizador
@@ -150,7 +153,7 @@ function mostrarPregunta() {
                 respuestasCorrectas++;
             } else {
                 resultado.className = "";
-                resultado.innerHTML = `Incorrecto.`;
+                resultado.innerHTML = `💥💥Incorrecto.💥💥`;
                 resultado.style.color = "red";
                 respuestasIncorrectas++
             }
@@ -184,7 +187,7 @@ function mostrarPregunta() {
             <p>Respuestas Incorrectas: ${respuestasIncorrectas}</p>
         `;
     }
-    
+
 
     // Finalizar el juego y mostrar el mensaje de victoria o derrota
     function terminarJuego(mensaje) {
@@ -206,22 +209,22 @@ function mostrarPregunta() {
         // Mantener el array preguntasVisitadas hasta que se agoten las preguntas
         respuestasCorrectas = 0; // Reiniciar contador de respuestas correctas
         respuestasIncorrectas = 0; // Reiniciar contador de respuestas incorrectas
-    
+
         btnGenerar.style.display = 'block'; // Mostrar el botón de generar preguntas
         btnGenerar.disabled = false; // Habilitar el botón de generar preguntas
         btnMasPreguntas.style.display = 'none'; // Ocultar el botón de más preguntas
-    
+
         actualizarContador(); // Actualizar el contador
         mostrarPregunta(); // Mostrar una nueva pregunta
     }
-    
+
 
     // Registrar eventos
     btnGenerar.addEventListener('click', mostrarPregunta);
     contenedorTrivia.addEventListener('click', verificarRespuesta);
     btnMasPreguntas.addEventListener('click', reiniciarJuego);
 
-    
+
     // Cargar las preguntas al inicio
     cargarTrivia();
 });
