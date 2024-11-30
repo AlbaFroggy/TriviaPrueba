@@ -138,13 +138,14 @@ window.addEventListener("load", () => {
             if (respuestaUsuario === preguntaActual.respuesta) {
                 resultado.textContent = "✨✨¡Correcto!✨✨";
                 resultado.style.color = "green";
+                respuestasCorrectas++;
             } else {
                 resultado.innerHTML = `Incorrecto.<br> La respuesta correcta era: ${preguntaActual.respuesta}`;
                 resultado.style.color = "red";
+                respuestasIncorrectas++
             }
 
             resultado.style.textAlign = "center";
-            respuestasCorrectas++;
 
             // Actualizar el contador
             actualizarContador();
