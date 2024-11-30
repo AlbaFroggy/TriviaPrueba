@@ -35,9 +35,9 @@ function mostrarPregunta() {
     // Verificar si ya no hay más preguntas disponibles
     if (preguntasVisitadas.length === trivia.length) {
         contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas disponibles!</p>";
-        preguntasVisitadas = []; // Reiniciar las preguntas visitadas
+        preguntasVisitadas = []; // Reiniciar las preguntas visitadas aquí
         return;
-    }
+    }    
 
     // Ocultar el botón de "Generar Pregunta" mientras se muestra la trivia
     btnGenerar.style.display = 'none';
@@ -203,15 +203,18 @@ function mostrarPregunta() {
 
     // Recargar el juego con más preguntas
     function reiniciarJuego() {
-        respuestasCorrectas = 0;
-        respuestasIncorrectas = 0;
-
-        btnGenerar.style.display = 'block'; // Volver a mostrar el botón de generar preguntas
+        // Mantener el array preguntasVisitadas hasta que se agoten las preguntas
+        respuestasCorrectas = 0; // Reiniciar contador de respuestas correctas
+        respuestasIncorrectas = 0; // Reiniciar contador de respuestas incorrectas
+    
+        btnGenerar.style.display = 'block'; // Mostrar el botón de generar preguntas
         btnGenerar.disabled = false; // Habilitar el botón de generar preguntas
         btnMasPreguntas.style.display = 'none'; // Ocultar el botón de más preguntas
+    
         actualizarContador(); // Actualizar el contador
         mostrarPregunta(); // Mostrar una nueva pregunta
     }
+    
 
     // Registrar eventos
     btnGenerar.addEventListener('click', mostrarPregunta);
