@@ -38,6 +38,9 @@ window.addEventListener("load", () => {
             return;
         }
 
+        // Ocultar el botón de "Generar Pregunta" mientras se muestra la trivia
+        btnGenerar.style.display = 'none';
+
         // Seleccionamos una pregunta no visitada al azar
         let indiceAleatorio;
         do {
@@ -54,10 +57,10 @@ window.addEventListener("load", () => {
             .join('');
 
         contenedorTrivia.innerHTML = `
-            <p>${preguntaActual.pregunta}</p>
-            <div>${opcionesHTML}</div>
-            <p id="temporizador">Tiempo restante: ${tiempoLimite} segundos</p>
-        `;
+        <p>${preguntaActual.pregunta}</p>
+        <div>${opcionesHTML}</div>
+        <p id="temporizador">Tiempo restante: ${tiempoLimite} segundos</p>
+    `;
 
         // Mostrar el contenedor de trivia después de cargar la pregunta
         contenedorTrivia.style.display = 'block'; // Mostrar el contenedor
@@ -81,7 +84,20 @@ window.addEventListener("load", () => {
                 clearInterval(timer); // Detener el temporizador
                 resultado.textContent = `Tiempo agotado. La respuesta correcta era: ${preguntaActual.respuesta}`;
                 resultado.style.color = "red";
-                respuestasIncorrectas++;
+
+                // Resaltar las opciones
+                const opciones = document.querySelectorAll('.opcion');
+                opciones.forEach(opcion => {
+                    if (opcion.textContent === preguntaActual.respuesta) {
+                        opcion.style.backgroundColor = "#4ea93b"; // Respuesta correcta (verde)
+                        opcion.style.color = "white"; // Texto blanco en la opción correcta
+                    } else {
+                        opcion.style.backgroundColor = "#E57373"; // Opciones incorrectas (rojo)
+                        opcion.style.color = "white"; // Texto blanco en las opciones incorrectas
+                    }
+                });
+
+                respuestasIncorrectas++; // Contabilizar el error
 
                 // Actualizar el contador
                 actualizarContador();
@@ -90,7 +106,7 @@ window.addEventListener("load", () => {
                 setTimeout(() => {
                     resultado.textContent = "";
                     mostrarPregunta();
-                }, 2000);
+                }, 3000);
             }
         }, 1000);
     }
@@ -101,18 +117,34 @@ window.addEventListener("load", () => {
             const respuestaUsuario = e.target.textContent;
             clearInterval(timer); // Detener el temporizador cuando se seleccione una respuesta
 
+            // Deshabilitar todas las opciones después de que el usuario seleccione una respuesta
+            const opciones = document.querySelectorAll('.opcion');
+            opciones.forEach(opcion => {
+                opcion.disabled = true; // Deshabilitar todos los botones
+            });
+
+            // Mostrar la respuesta correcta en verde y la incorrecta en rojo
+            opciones.forEach(opcion => {
+                if (opcion.textContent === preguntaActual.respuesta) {
+                    opcion.style.backgroundColor = "#4ea93b"; // Respuesta correcta (verde)
+                    opcion.style.color = "white"; // Texto blanco en la respuesta correcta
+                } else if (opcion.textContent === respuestaUsuario) {
+                    opcion.style.backgroundColor = "#E57373"; // Respuesta incorrecta (rojo)
+                    opcion.style.color = "white"; // Texto blanco en la respuesta incorrecta
+                }
+            });
+
+            // Mostrar el resultado
             if (respuestaUsuario === preguntaActual.respuesta) {
                 resultado.textContent = "✨✨¡Correcto!✨✨";
                 resultado.style.color = "green";
-
-                resultado.style.textAlign = "left";
-                respuestasCorrectas++;
             } else {
-                resultado.innerHTML = `Incorrecto.<br> La respuesta correcta es: ${preguntaActual.respuesta}`;
+                resultado.innerHTML = `Incorrecto.<br> La respuesta correcta era: ${preguntaActual.respuesta}`;
                 resultado.style.color = "red";
-                resultado.style.textAlign = "center";
-                respuestasIncorrectas++;
             }
+
+            resultado.style.textAlign = "center";
+            respuestasCorrectas++;
 
             // Actualizar el contador
             actualizarContador();
@@ -130,7 +162,7 @@ window.addEventListener("load", () => {
             setTimeout(() => {
                 resultado.textContent = "";
                 mostrarPregunta();
-            }, 3000);
+            }, 2000);
         }
     }
 
@@ -149,10 +181,10 @@ window.addEventListener("load", () => {
         `;
         contenedorTrivia.style.color = "blue";
         resultado.textContent = "";
-        
+
         // Ocultar el botón de Generar Pregunta
         btnGenerar.style.display = 'none';  // Ocultar el botón de generar pregunta
-        
+
         // Mostrar el botón de más preguntas
         btnMasPreguntas.style.display = 'block'; // Mostrar el botón de más preguntas
     }
@@ -162,14 +194,13 @@ window.addEventListener("load", () => {
         respuestasCorrectas = 0;
         respuestasIncorrectas = 0;
         preguntasVisitadas = []; // Reiniciar las preguntas visitadas
-        
+
         btnGenerar.style.display = 'block'; // Volver a mostrar el botón de generar preguntas
         btnGenerar.disabled = false; // Habilitar el botón de generar preguntas
         btnMasPreguntas.style.display = 'none'; // Ocultar el botón de más preguntas
         actualizarContador(); // Actualizar el contador
         mostrarPregunta(); // Mostrar una nueva pregunta
     }
-
 
     // Registrar eventos
     btnGenerar.addEventListener('click', mostrarPregunta);
