@@ -1,81 +1,77 @@
+/* Diseño general */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffecd2;
-    color: #4f4f4f;
+    background-color: #ffecd2; /* Melocotón suave */
+    color: #4f4f4f; /* Gris oscuro para el texto */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
-    overflow: auto;
-    padding: 20px;
 }
 
+/* Título */
 h1 {
-    font-size: 3em;
-    color: #f4a261;
-    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #f4a261; /* Color caramelo */
+    margin-bottom: 20px;
 }
 
+/* Contenedor principal de trivia */
+/* Ocultar el contenedor de trivia al principio */
 #trivia {
-    display: none;
+    display: none; /* Inicialmente oculto */
+    margin-top:20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    max-width: 100%;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
 }
 
-#resultado {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #f4a261;
-    margin-top: 20px;
-    text-align: center;
+/* Contenedor para el temporizador, contador y resultado */
+#trivia .contenedor-info {
+    margin-top: 20px; /* Espaciado entre los elementos */
+    font-size: 1.2em;
 }
 
-#contador {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #f4a261;
-    margin-top: 20px;
-    text-align: center;
-}
-
+/* Estilo para el botón de generar trivia */
 #generar-trivia, #mas-preguntas {
-    background-color: #f4a261;
+    background-color: #f4a261; /* Color caramelo */
     color: white;
     border: none;
-    padding: 20px 40px;
-    font-size: 1.5em;
+    padding: 15px 30px;
+    font-size: 1.2em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 30px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
+#generar-trivia:hover, #mas-preguntas:hover {
+    background-color: #e0814f; /* Color caramelo más oscuro */
+}
+
+/* Temporizador */
 #temporizador {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: #e0814f;
-    margin-top: 10px;
+    color: #e0814f; /* Color caramelo más oscuro */
 }
 
+/* Estilo para las opciones de respuestas */
 button.opcion {
-    background-color: #fff0e6;
-    border: 2px solid #f4a261;
-    color: #4f4f4f;
-    font-size: 1.5em;
-    padding: 20px 30px;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    background-color: #fff0e6; /* Color melocotón suave */
+    border: 2px solid #f4a261; /* Color caramelo */
+    color: #4f4f4f; /* Gris oscuro */
+    font-size: 1.1em;
+    padding: 12px 20px;
+    margin: 10px 0;
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
@@ -83,149 +79,56 @@ button.opcion {
 }
 
 button.opcion:hover {
-    background-color: #f4a261;
+    background-color: #f4a261; /* Color caramelo */
     color: white;
     transform: scale(1.05);
 }
 
 button.opcion:active {
-    background-color: #e0814f;
+    background-color: #e0814f; /* Caramelo más oscuro */
     transform: scale(0.98);
 }
 
+/* Estilo para respuestas correctas */
 #resultado.correcto {
-    color: #f4a261;
+    color: #f4a261; /* Color caramelo */
     font-size: 1.5em;
 }
 
+/* Estilo para respuestas incorrectas */
 #resultado.incorrecto {
-    color: #ff6347;
+    color: #ff6347; /* Naranja suave para respuestas incorrectas */
     font-size: 1.5em;
 }
 
+/* Estilo para mensaje final cuando no hay más preguntas */
 #trivia p {
-    font-size: 2em;
-    color: #f4a261;
+    font-size: 1.5em;
+    color: #f4a261; /* Color caramelo */
 }
 
+/* Diseño para pantalla móvil */
 @media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
     h1 {
-        font-size: 3.5em;
-        margin-bottom: 20px;
+        font-size: 2em;
     }
 
     #trivia {
-        padding: 25px;
-        width: 100%;
-        margin-bottom: 30px;
-        min-height: 300px;
+        padding: 15px;
+        width: 90%;
     }
 
     #generar-trivia, #mas-preguntas {
-        font-size: 1.5em;
-        padding: 25px 50px;
+        font-size: 1em;
+        padding: 12px 20px;
     }
 
     button.opcion {
-        font-size: 1.6em;
-        padding: 25px 40px;
-        margin: 20px 0;
-        min-width: 280px;
+        font-size: 1em;
+        padding: 10px 15px;
     }
 
     #resultado, #contador, #temporizador {
-        font-size: 1.5em;
-        margin-top: 20px;
-        width: 100%;
-        text-align: center;
-    }
-
-    #resultado, #contador {
-        margin-top: 30px;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 768px) {
-    h1 {
-        font-size: 3em;
-    }
-
-    #trivia {
-        padding: 25px;
-        width: 80%;
-        margin-bottom: 30px;
-    }
-
-    #generar-trivia, #mas-preguntas {
-        font-size: 1.4em;
-        padding: 20px 40px;
-    }
-
-    button.opcion {
-        font-size: 1.3em;
-        padding: 20px 30px;
-        margin: 20px 0;
-    }
-
-    #resultado, #contador, #temporizador {
-        font-size: 1.4em;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    h1 {
-        font-size: 3em;
-    }
-
-    #trivia {
-        padding: 25px;
-        width: 70%;
-        margin-bottom: 30px;
-    }
-
-    #generar-trivia, #mas-preguntas {
-        font-size: 1.3em;
-        padding: 18px 35px;
-    }
-
-    button.opcion {
-        font-size: 1.2em;
-        padding: 18px 25px;
-        margin: 15px 0;
-    }
-
-    #resultado, #contador, #temporizador {
-        font-size: 1.3em;
-    }
-}
-
-@media (min-width: 1025px) {
-    h1 {
-        font-size: 3.2em;
-    }
-
-    #trivia {
-        padding: 25px;
-        width: 60%;
-        margin-bottom: 40px;
-    }
-
-    #generar-trivia, #mas-preguntas {
-        font-size: 1.2em;
-        padding: 15px 30px;
-    }
-
-    button.opcion {
-        font-size: 1.1em;
-        padding: 15px 25px;
-        margin: 15px 0;
-    }
-
-    #resultado, #contador, #temporizador {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 }

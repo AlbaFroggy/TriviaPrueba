@@ -32,42 +32,45 @@ window.addEventListener("load", () => {
     }
 
     // Mostrar una pregunta al azar sin repetir
-    function mostrarPregunta() {
-        if (trivia.length === 0 || preguntasVisitadas.length === trivia.length) {
-            contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas!</p>";
-            return;
-        }
+    // Mostrar la pregunta con el temporizador y las opciones
+function mostrarPregunta() {
+    if (trivia.length === 0 || preguntasVisitadas.length === trivia.length) {
+        contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas!</p>";
+        return;
+    }
 
-        // Ocultar el botón de "Generar Pregunta" mientras se muestra la trivia
-        btnGenerar.style.display = 'none';
+    // Ocultar el botón de "Generar Pregunta" mientras se muestra la trivia
+    btnGenerar.style.display = 'none';
 
-        // Seleccionamos una pregunta no visitada al azar
-        let indiceAleatorio;
-        do {
-            indiceAleatorio = Math.floor(Math.random() * trivia.length);
-        } while (preguntasVisitadas.includes(indiceAleatorio)); // Evitar repetir preguntas
+    // Seleccionamos una pregunta no visitada al azar
+    let indiceAleatorio;
+    do {
+        indiceAleatorio = Math.floor(Math.random() * trivia.length);
+    } while (preguntasVisitadas.includes(indiceAleatorio)); // Evitar repetir preguntas
 
-        preguntaActual = trivia[indiceAleatorio];
+    preguntaActual = trivia[indiceAleatorio];
 
-        // Marcar esta pregunta como visitada
-        preguntasVisitadas.push(indiceAleatorio);
+    // Marcar esta pregunta como visitada
+    preguntasVisitadas.push(indiceAleatorio);
 
-        const opcionesHTML = preguntaActual.opciones
-            .map(opcion => `<button class="opcion">${opcion}</button>`)
-            .join('');
+    const opcionesHTML = preguntaActual.opciones
+        .map(opcion => `<button class="opcion">${opcion}</button>`)
+        .join('');
 
-        contenedorTrivia.innerHTML = `
+    contenedorTrivia.innerHTML = `
         <p>${preguntaActual.pregunta}</p>
         <div>${opcionesHTML}</div>
         <p id="temporizador">Tiempo restante: ${tiempoLimite} segundos</p>
+        <div id="resultado"></div>
+        <div id="contador"></div>
     `;
 
-        // Mostrar el contenedor de trivia después de cargar la pregunta
-        contenedorTrivia.style.display = 'block'; // Mostrar el contenedor
+    // Mostrar el contenedor de trivia después de cargar la pregunta
+    contenedorTrivia.style.display = 'block'; // Mostrar el contenedor
 
-        // Iniciar el temporizador
-        iniciarTemporizador();
-    }
+    // Iniciar el temporizador
+    iniciarTemporizador();
+}
 
     // Iniciar el temporizador
     function iniciarTemporizador() {
@@ -140,7 +143,7 @@ window.addEventListener("load", () => {
                 resultado.style.color = "green";
                 respuestasCorrectas++;
             } else {
-                resultado.innerHTML = `Incorrecto.<br> La respuesta correcta era: ${preguntaActual.respuesta}`;
+                resultado.innerHTML = `Incorrecto.`;
                 resultado.style.color = "red";
                 respuestasIncorrectas++
             }
