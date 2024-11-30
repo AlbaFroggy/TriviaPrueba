@@ -27,11 +27,12 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 80%;
+    width: 90%; /* Usamos 90% del ancho en lugar de un valor fijo */
     max-width: 500px;
     text-align: center;
     margin-bottom: 20px;
     position: relative;
+    min-height: 200px; /* Asegura que el contenedor tenga una altura mínima */
 }
 
 /* Contenedor para los resultados */
@@ -41,8 +42,8 @@ h1 {
     font-weight: bold;
     padding: 10px 0;
     color: #f4a261; /* Color caramelo */
-    margin-top: 10px; /* Para asegurarnos que no se superponga */
-    text-align: center; /* Aseguramos que el texto esté centrado */
+    margin-top: 10px;
+    text-align: center;
 }
 
 /* Contenedor para el contador de respuestas */
@@ -50,9 +51,9 @@ h1 {
     font-size: 1.2em;
     font-weight: bold;
     color: #f4a261; /* Color caramelo */
-    margin-top: 10px; /* Para no chocar con el resultado */
+    margin-top: 10px;
     width: 100%;
-    text-align: center; /* Aseguramos que el contador también esté centrado */
+    text-align: center;
 }
 
 /* Estilo para el botón de generar trivia */
@@ -66,7 +67,7 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
-    display: block; /* Esto asegura que el botón se centre */
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -81,17 +82,17 @@ h1 {
 
 /* Estilo para las opciones de respuestas */
 button.opcion {
-    margin-bottom: 20px;
     background-color: #fff0e6; /* Color melocotón suave */
     border: 2px solid #f4a261; /* Color caramelo */
     color: #4f4f4f; /* Gris oscuro */
     font-size: 1.1em;
-    padding: 12px 20px;
+    padding: 18px 25px; /* Aumentamos el tamaño de las opciones */
     margin: 10px 0;
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 200px; /* Asegura que los botones sean lo suficientemente grandes */
 }
 
 button.opcion:hover {
@@ -126,33 +127,35 @@ button.opcion:active {
 /* Diseño para pantalla móvil */
 @media (max-width: 600px) {
     h1 {
-        font-size: 2.2em; /* Aumentar el tamaño del título */
-        margin-bottom: 15px; /* Reducir espacio debajo del título */
+        font-size: 2em; /* Título un poco más grande */
+        margin-bottom: 15px;
     }
 
     #trivia {
         padding: 20px;
-        width: 90%; /* Asegurar que ocupe casi todo el ancho */
+        width: 90%;
+        min-height: 250px; /* Aseguramos una altura suficiente */
     }
 
     #generar-trivia, #mas-preguntas {
-        font-size: 1.1em; /* Aumentar el tamaño del texto en botones */
-        padding: 14px 24px;
+        font-size: 1.1em;
+        padding: 14px 25px;
     }
 
     button.opcion {
-        font-size: 1.1em;
-        padding: 14px 22px; /* Mejorar el espaciado de los botones */
+        font-size: 1.2em;
+        padding: 18px 30px; /* Mejor padding en las opciones */
+        min-width: 220px; /* Botones más grandes para pantallas pequeñas */
     }
 
     #resultado, #contador, #temporizador {
-        font-size: 1.2em; /* Aumentar el tamaño de fuente */
+        font-size: 1.2em;
         margin-top: 10px;
-        width: 100%; /* Asegura que ocupen todo el ancho en pantallas pequeñas */
-        text-align: center; /* Centramos también en pantallas pequeñas */
+        width: 100%;
+        text-align: center;
     }
 
     #resultado, #contador {
-        margin-top: 15px; /* Aumentar el espacio entre elementos */
+        margin-top: 15px; /* Mejor separación entre los elementos */
     }
 }
