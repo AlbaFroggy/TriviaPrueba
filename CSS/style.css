@@ -1,0 +1,151 @@
+/* Diseño general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffecd2; /* Melocotón suave */
+    color: #4f4f4f; /* Gris oscuro para el texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Título */
+h1 {
+    font-size: 2.5em;
+    color: #f4a261; /* Color caramelo */
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal de trivia */
+/* Ocultar el contenedor de trivia al principio */
+#trivia {
+    display: none; /* Inicialmente oculto */
+    margin-top:20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Contenedor para los resultados a la derecha */
+#resultado {
+    width: 300px;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: absolute; /* Para posicionar el mensaje de resultado */
+    right: 10px; /* Alineamos a la derecha con un pequeño margen */
+    top: 50%; /* Centrado verticalmente respecto al contenedor */
+    transform: translateY(-50%); /* Ajustamos el centrado vertical */
+    padding: 10px 0; /* Añadimos un pequeño padding para espaciarlo */
+}
+
+/* Contenedor para el contador de respuestas a la derecha */
+#contador {
+    position: absolute; /* Para posicionar el contador a la derecha */
+    right: 80px; /* Alineamos a la derecha con un pequeño margen */
+    bottom: 80px; /* Lo posicionamos cerca de la parte inferior */
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #f4a261; /* Color caramelo para el contador */
+}
+
+/* Estilo para el botón de generar trivia */
+#generar-trivia, #mas-preguntas {
+    background-color: #f4a261; /* Color caramelo */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#generar-trivia:hover, #mas-preguntas:hover {
+    background-color: #e0814f; /* Color caramelo más oscuro */
+}
+
+/* Temporizador */
+#temporizador {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e0814f; /* Color caramelo más oscuro */
+    margin-top: 10px;
+}
+
+/* Estilo para las opciones de respuestas */
+button.opcion {
+    margin-bottom: 20px;
+    background-color: #fff0e6; /* Color melocotón suave */
+    border: 2px solid #f4a261; /* Color caramelo */
+    color: #4f4f4f; /* Gris oscuro */
+    font-size: 1.1em;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.opcion:hover {
+    background-color: #f4a261; /* Color caramelo */
+    color: white;
+    transform: scale(1.05);
+}
+
+button.opcion:active {
+    background-color: #e0814f; /* Caramelo más oscuro */
+    transform: scale(0.98);
+}
+
+/* Estilo para respuestas correctas */
+#resultado.correcto {
+    color: #f4a261; /* Color caramelo */
+    font-size: 1.5em;
+}
+
+/* Estilo para respuestas incorrectas */
+#resultado.incorrecto {
+    color: #ff6347; /* Naranja suave para respuestas incorrectas */
+    font-size: 1.5em;
+}
+
+/* Estilo para mensaje final cuando no hay más preguntas */
+#trivia p {
+    font-size: 1.5em;
+    color: #f4a261; /* Color caramelo */
+}
+
+/* Diseño para pantalla móvil */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    #trivia {
+        padding: 15px;
+        width: 90%;
+    }
+
+    #generar-trivia, #mas-preguntas {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    button.opcion {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    #resultado, #contador, #temporizador {
+        font-size: 1em;
+    }
+}

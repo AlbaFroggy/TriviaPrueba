@@ -1,0 +1,257 @@
+[
+    {
+        "pregunta": "¿Cuál es el país más grande del mundo?",
+        "opciones": [
+            "Estados Unidos",
+            "Canadá",
+            "Rusia",
+            "China"
+        ],
+        "respuesta": "Rusia"
+    },
+    {
+        "pregunta": "¿Quién pintó la Mona Lisa?",
+        "opciones": [
+            "Vincent van Gogh",
+            "Pablo Picasso",
+            "Leonardo da Vinci",
+            "Claude Monet"
+        ],
+        "respuesta": "Leonardo da Vinci"
+    },
+    {
+        "pregunta": "¿En qué año llegó el ser humano a la Luna?",
+        "opciones": [
+            "1959",
+            "1969",            
+            "1971",
+            "1980"
+        ],
+        "respuesta": "1969"
+    },{
+        "pregunta": "¿Qué evento en Nueva York en 1969 se considera el punto de partida del movimiento moderno por los derechos LGBT+?",
+        "opciones": [
+            "La Marcha del Orgullo",
+            "La fundación de ACT UP",
+            "Los disturbios de Stonewall",
+            "La primera cabalgata LGBT"
+        ],
+        "respuesta": "Los disturbios de Stonewall"
+    }, {
+        "pregunta": "¿Qué país europeo fue el primero en permitir el matrimonio entre personas del mismo sexo?",
+        "opciones": [
+            "Francia",
+            "Países Bajos",
+            "España",
+            "Suecia"
+        ],
+        "respuesta": "Países Bajos"
+    }, {
+        "pregunta": "¿Qué significa la sigla «LGBT»?",
+        "opciones": [
+            "Lesbianas, Gays, Bisexuales y Transgéneros",
+            "Liberación, Gente, Bisexual y Transgénero",
+            "Lechuga, Guacamole, Bacon y Tomate",
+            "Lucha Global por la Igualdad Transgénero"
+        ],
+        "respuesta": "Lesbianas, Gays, Bisexuales y Transgéneros"
+    },
+    {
+        "pregunta": "¿Cuál es el océano más grande?",
+        "opciones": [
+            "Atlántico",
+            "Índico",
+            "Ártico",
+            "Pacífico"
+        ],
+        "respuesta": "Pacífico"
+    },
+    {
+        "pregunta": "¿Quién fue la autora de «El segundo sexo», una de las obras más importantes del feminismo?",
+        "opciones": [
+            "Simone de Beauvoir",
+            "Virginia Woolf",
+            "Mary Wollstonecraft",
+            "Betty Friedan"
+        ],
+        "respuesta": "Simone de Beauvoir"
+    },{
+        "pregunta": "¿Qué significa el término «feminismo interseccional»?",
+        "opciones": [
+            "La lucha por la igualdad de género",
+            "La idea de que la opresión se cruza con otras formas de discriminación",
+            "El feminismo en los medios de comunicación",
+            "El feminismo que solo lucha por los derechos de las mujeres blancas"
+        ],
+        "respuesta": "La idea de que la opresión se cruza con otras formas de discriminación"
+    },{
+        "pregunta": "¿Quién fue la primera mujer en viajar al espacio?",
+        "opciones": [
+            "Valentina Tereshkova",
+            "Sally Ride",
+            "Mae Jemison",
+            "Yuri Gagarin"
+        ],
+        "respuesta": "Valentina Tereshkova"
+    },
+    {
+        "pregunta": "¿Quién escribió «Don Quijote de la Mancha»?",
+        "opciones": [
+            "Gabriel García Márquez",
+            "Miguel de Cervantes",
+            "Federico García Lorca",
+            "Pablo Neruda"
+        ],
+        "respuesta": "Miguel de Cervantes"
+    },
+    {
+        "pregunta": "¿Cuál es el animal terrestre más grande?",
+        "opciones": [
+            "Rinoceronte blanco",
+            "Elefante africano",
+            "Jirafa",
+            "Oso polar"
+        ],
+        "respuesta": "Elefante africano"
+    },
+    {
+        "pregunta": "¿Cuál es el elemento químico más abundante en la Tierra?",
+        "opciones": [
+            "Oxígeno",
+            "Hidrógeno",
+            "Carbono",
+            "Nitrógeno"
+        ],
+        "respuesta": "Oxígeno"
+    },
+    {
+        "pregunta": "¿Cuál es la capital de Japón?",
+        "opciones": [
+            "Beijing",
+            "Seúl",
+            "Osaka",
+            "Tokio"
+        ],
+        "respuesta": "Tokio"
+    },
+    {
+        "pregunta": "¿Cuántos continentes hay en el mundo?",
+        "opciones": [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "respuesta": "7"
+    },
+    {
+        "pregunta": "¿Qué instrumento musical tiene 88 teclas?",
+        "opciones": [
+            "Acordeón",
+            "Sintetizador",
+            "Piano",
+            "Clavicémbalo"
+        ],
+        "respuesta": "Piano"
+    },
+    {
+        "pregunta": "¿Qué significa «hacer de tripas corazón»?",
+        "opciones": [
+            "Ser valiente",
+            "Mentir",
+            "Perder el control",
+            "Ser cruel"
+        ],
+        "respuesta": "Ser valiente"
+    },
+    {
+        "pregunta": "¿Qué quiere decir «no hay mal que por bien no venga»?",
+        "opciones": [
+            "Lo malo se convierte en aprendizaje",
+            "Lo malo es inevitable",
+            "Todo lo malo tiene su porqué",
+            "Lo malo siempre trae algo bueno"
+        ],
+        "respuesta": "Lo malo siempre trae algo bueno"
+    },
+    {
+        "pregunta": "¿Qué significa «dar en el clavo»?",
+        "opciones": [
+            "Romper algo",
+            "Acertar en algo",
+            "Tener suerte",
+            "Hacer un esfuerzo"
+        ],
+        "respuesta": "Acertar en algo"
+    },
+    {
+        "pregunta": "¿Qué quiere decir «quien mucho abarca, poco aprieta»?",
+        "opciones": [
+            "No hacer demasiado",
+            "No saber comprometerse",
+            "Hacer muchas cosas a la vez",
+            "Hacer pocas cosas bien"
+        ],
+        "respuesta": "Hacer pocas cosas bien"
+    },
+    {
+        "pregunta": "¿Qué significa «más vale tarde que nunca»?",
+        "opciones": [
+            "Nunca es tarde para empezar",
+            "Lo que se hace rápido se hace mejor",
+            "Mejor haberlo hecho aunque haya sido tarde",
+            "Es mejor no esperar para hacer algo"
+        ],
+        "respuesta": "Mejor haberlo hecho aunque haya sido tarde"
+    },
+    {
+        "pregunta": "¿Qué significa «el que siembra vientos, recoge tempestades»?",
+        "opciones": [
+            "Las malas acciones traen consecuencias",
+            "El viento siempre trae lluvia",
+            "Las cosas malas se ven venir",
+            "Las mentiras nunca duran"
+        ],
+        "respuesta": "Las malas acciones traen consecuencias"
+    },
+    {
+        "pregunta": "¿Qué quiere decir «agua que no has de beber, déjala correr»?",
+        "opciones": [
+            "El agua siempre es útil",
+            "No te preocupes por todo",
+            "La vida sigue su curso",
+            "No te metas en problemas ajenos"
+        ],
+        "respuesta": "No te metas en problemas ajenos"
+    },
+    {
+        "pregunta": "¿Qué significa «a buen hambre no hay mal pan»?",
+        "opciones": [
+            "Todo es bueno cuando se tiene necesidad",
+            "Cualquier pan es bueno",
+            "Hay que ser agradecido",
+            "El hambre no tiene solución"
+        ],
+        "respuesta": "Todo es bueno cuando se tiene necesidad"
+    },
+    {
+        "pregunta": "¿Qué quiere decir «quien ríe último, ríe mejor»?",
+        "opciones": [
+            "No cantar victoria antes de tiempo",
+            "Hay que esperar para ganar",
+            "Reír siempre es lo mejor",
+            "El último es el mejor"
+        ],
+        "respuesta": "No cantar victoria antes de tiempo"
+    },
+    {
+        "pregunta": "¿Qué significa «no es oro todo lo que reluce»?",
+        "opciones": [
+            "No todo lo que brilla es oro",
+            "La apariencia nunca engaña",
+            "No todo lo que parece bueno lo es",
+            "La riqueza es siempre visible"
+        ],
+        "respuesta": "No todo lo que parece bueno lo es"
+    }
+]
