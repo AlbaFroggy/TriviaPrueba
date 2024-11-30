@@ -1,161 +1,231 @@
-/* Diseño general */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffecd2; /* Melocotón suave */
-    color: #4f4f4f; /* Gris oscuro para el texto */
+    background-color: #ffecd2;
+    color: #4f4f4f;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Cambié esto para centrar todo verticalmente */
+    justify-content: center;
     height: 100vh;
     margin: 0;
-    overflow: auto; /* Para manejar el desbordamiento en pantallas pequeñas */
+    overflow: auto;
+    padding: 20px;
 }
 
-/* Título */
 h1 {
-    font-size: 2.5em;
-    color: #f4a261; /* Color caramelo */
-    margin-bottom: 20px;
+    font-size: 3em;
+    color: #f4a261;
+    margin-bottom: 30px;
 }
 
-/* Contenedor principal de trivia */
 #trivia {
-    display: none; /* Inicialmente oculto */
-    margin-top: 20px;
+    display: none;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 90%; /* Usamos 90% del ancho en lugar de un valor fijo */
-    max-width: 500px;
+    padding: 30px;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
-    min-height: 200px; /* Asegura que el contenedor tenga una altura mínima */
 }
 
-/* Contenedor para los resultados */
 #resultado {
-    width: 100%;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
-    padding: 10px 0;
-    color: #f4a261; /* Color caramelo */
-    margin-top: 10px;
+    color: #f4a261;
+    margin-top: 20px;
     text-align: center;
 }
 
-/* Contenedor para el contador de respuestas */
 #contador {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
-    color: #f4a261; /* Color caramelo */
-    margin-top: 10px;
-    width: 100%;
+    color: #f4a261;
+    margin-top: 20px;
     text-align: center;
 }
 
-/* Estilo para el botón de generar trivia */
 #generar-trivia, #mas-preguntas {
-    background-color: #f4a261; /* Color caramelo */
+    background-color: #f4a261;
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
+    padding: 20px 40px;
+    font-size: 1.5em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
+    margin-top: 30px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Temporizador */
 #temporizador {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
-    color: #e0814f; /* Color caramelo más oscuro */
+    color: #e0814f;
     margin-top: 10px;
 }
 
-/* Estilo para las opciones de respuestas */
 button.opcion {
-    background-color: #fff0e6; /* Color melocotón suave */
-    border: 2px solid #f4a261; /* Color caramelo */
-    color: #4f4f4f; /* Gris oscuro */
-    font-size: 1.1em;
-    padding: 18px 25px; /* Aumentamos el tamaño de las opciones */
-    margin: 10px 0;
+    background-color: #fff0e6;
+    border: 2px solid #f4a261;
+    color: #4f4f4f;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    margin: 20px 0;
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    min-width: 200px; /* Asegura que los botones sean lo suficientemente grandes */
 }
 
 button.opcion:hover {
-    background-color: #f4a261; /* Color caramelo */
+    background-color: #f4a261;
     color: white;
     transform: scale(1.05);
 }
 
 button.opcion:active {
-    background-color: #e0814f; /* Caramelo más oscuro */
+    background-color: #e0814f;
     transform: scale(0.98);
 }
 
-/* Estilo para respuestas correctas */
 #resultado.correcto {
-    color: #f4a261; /* Color caramelo */
+    color: #f4a261;
     font-size: 1.5em;
 }
 
-/* Estilo para respuestas incorrectas */
 #resultado.incorrecto {
-    color: #ff6347; /* Naranja suave para respuestas incorrectas */
+    color: #ff6347;
     font-size: 1.5em;
 }
 
-/* Estilo para mensaje final cuando no hay más preguntas */
 #trivia p {
-    font-size: 1.5em;
-    color: #f4a261; /* Color caramelo */
+    font-size: 2em;
+    color: #f4a261;
 }
 
-/* Diseño para pantalla móvil */
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
     h1 {
-        font-size: 2em; /* Título un poco más grande */
-        margin-bottom: 15px;
+        font-size: 3.5em;
+        margin-bottom: 20px;
     }
 
     #trivia {
-        padding: 20px;
-        width: 90%;
-        min-height: 250px; /* Aseguramos una altura suficiente */
+        padding: 25px;
+        width: 100%;
+        margin-bottom: 30px;
+        min-height: 300px;
     }
 
     #generar-trivia, #mas-preguntas {
-        font-size: 1.1em;
-        padding: 14px 25px;
+        font-size: 1.5em;
+        padding: 25px 50px;
     }
 
     button.opcion {
-        font-size: 1.2em;
-        padding: 18px 30px; /* Mejor padding en las opciones */
-        min-width: 220px; /* Botones más grandes para pantallas pequeñas */
+        font-size: 1.6em;
+        padding: 25px 40px;
+        margin: 20px 0;
+        min-width: 280px;
     }
 
     #resultado, #contador, #temporizador {
-        font-size: 1.2em;
-        margin-top: 10px;
+        font-size: 1.5em;
+        margin-top: 20px;
         width: 100%;
         text-align: center;
     }
 
     #resultado, #contador {
-        margin-top: 15px; /* Mejor separación entre los elementos */
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    #trivia {
+        padding: 25px;
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    #generar-trivia, #mas-preguntas {
+        font-size: 1.4em;
+        padding: 20px 40px;
+    }
+
+    button.opcion {
+        font-size: 1.3em;
+        padding: 20px 30px;
+        margin: 20px 0;
+    }
+
+    #resultado, #contador, #temporizador {
+        font-size: 1.4em;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    #trivia {
+        padding: 25px;
+        width: 70%;
+        margin-bottom: 30px;
+    }
+
+    #generar-trivia, #mas-preguntas {
+        font-size: 1.3em;
+        padding: 18px 35px;
+    }
+
+    button.opcion {
+        font-size: 1.2em;
+        padding: 18px 25px;
+        margin: 15px 0;
+    }
+
+    #resultado, #contador, #temporizador {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 1025px) {
+    h1 {
+        font-size: 3.2em;
+    }
+
+    #trivia {
+        padding: 25px;
+        width: 60%;
+        margin-bottom: 40px;
+    }
+
+    #generar-trivia, #mas-preguntas {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+
+    button.opcion {
+        font-size: 1.1em;
+        padding: 15px 25px;
+        margin: 15px 0;
+    }
+
+    #resultado, #contador, #temporizador {
+        font-size: 1.2em;
     }
 }
