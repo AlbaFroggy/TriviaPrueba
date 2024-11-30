@@ -89,18 +89,16 @@ button.opcion:active {
     transform: scale(0.98);
 }
 #resultado{
-    font-size: 1.5em;
+    font-size: 1.5em !important;
 }
 /* Estilo para respuestas correctas */
 #resultado.correcto {
     color: #f4a261; /* Color caramelo */
-    font-size: 1.5em;
 }
 
 /* Estilo para respuestas incorrectas */
 #resultado.incorrecto {
     color: #ff6347; /* Naranja suave para respuestas incorrectas */
-    font-size: 1.5em;
 }
 
 /* Estilo para mensaje final cuando no hay más preguntas */

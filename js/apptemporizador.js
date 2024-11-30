@@ -143,10 +143,12 @@ function mostrarPregunta() {
 
             // Mostrar el resultado
             if (respuestaUsuario === preguntaActual.respuesta) {
+                resultado.className = "";
                 resultado.textContent = "✨✨¡Correcto!✨✨";
                 resultado.style.color = "green";
                 respuestasCorrectas++;
             } else {
+                resultado.className = "";
                 resultado.innerHTML = `Incorrecto.`;
                 resultado.style.color = "red";
                 respuestasIncorrectas++
