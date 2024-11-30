@@ -29,7 +29,7 @@
         ],
         "respuesta": "Linux"
     },{
-        "pregunta": "¿En qué movimiento artístico se enmarca la obra 'Guernica' de Pablo Picasso?",
+        "pregunta": "¿En qué movimiento artístico se enmarca la obra «Guernica» de Pablo Picasso?",
         "opciones": [
             "Cubismo",
             "Expresionismo",
@@ -106,7 +106,7 @@
         "pregunta": "¿Qué significa la sigla «LGBT»?",
         "opciones": [
             "Lesbianas, Gays, Bisexuales y Transgéneros",
-            "Liberación, Gente, Bisexual y Transgénero",
+            "Liberación de la Gente Bisexual y Transgénero",
             "Lechuga, Guacamole, Bacon y Tomate",
             "Lucha Global por la Igualdad Transgénero"
         ],
