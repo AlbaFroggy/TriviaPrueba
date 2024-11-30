@@ -89,7 +89,7 @@ button.opcion:active {
     transform: scale(0.98);
 }
 #resultado{
-    font-size: 1.5em !important;
+    font-size: 1.5em ;
 }
 /* Estilo para respuestas correctas */
 #resultado.correcto {
@@ -132,3 +132,94 @@ button.opcion:active {
         font-size: 1em;
     }
 }
+/* Diseño para pantallas de tablets */
+@media (min-width: 600px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    #trivia {
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+    }
+
+    #generar-trivia, #mas-preguntas {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+
+    button.opcion {
+        font-size: 1.1em;
+        padding: 12px 18px;
+    }
+
+    #resultado, #contador, #temporizador {
+        font-size: 1.1em;
+    }
+
+    #temporizador {
+        font-size: 1.3em;
+    }
+}
+/* Diseño para pantallas grandes*/
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    #trivia {
+        width: 50%;
+        padding: 40px;
+        max-width: 700px;
+    }
+
+    #generar-trivia, #mas-preguntas {
+        font-size: 1.3em;
+        padding: 15px 30px;
+    }
+
+    button.opcion {
+        font-size: 1.2em;
+        padding: 15px 25px;
+    }
+
+    #resultado, #contador, #temporizador {
+        font-size: 1.2em;
+    }
+
+    #temporizador {
+        font-size: 1.4em;
+    }
+}
+/* Diseño para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    #trivia {
+        padding: 10px;
+        width: 90%;
+    }
+
+    #generar-trivia, #mas-preguntas {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    button.opcion {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+
+    #resultado, #contador, #temporizador {
+        font-size: 0.9em;
+    }
+
+    #temporizador {
+        font-size: 1.1em;
+    }
+}
+
+
