@@ -20,6 +20,16 @@
         "respuesta": "Leonardo da Vinci"
     },
     {
+        "pregunta": "¿Quién escribió el famoso ensayo *Una habitación propia*?",
+        "opciones": [
+            "Franz Kafka",
+          "Simone de Beauvoir",
+          "Virginia Woolf",
+          "F. Scott Fitzgerald"
+        ],
+        "respuesta": "Virginia Woolf"
+      },      
+    {
         "pregunta": "¿En qué año llegó el ser humano a la Luna?",
         "opciones": [
             "1959",
