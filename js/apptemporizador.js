@@ -30,11 +30,7 @@ window.addEventListener("load", () => {
             contenedorTrivia.textContent = "No se pudieron cargar las preguntas. Intenta de nuevo más tarde.";
         }
     }
-
-    // Mostrar una pregunta al azar sin repetir
-    // Mostrar la pregunta con el temporizador y las opciones
-// Mostrar una pregunta al azar sin repetir
-// Mostrar la pregunta con el temporizador y las opciones
+// Mostrar una pregunta al azar sin repetir con el temporizador y las opciones
 function mostrarPregunta() {
     if (trivia.length === 0 || preguntasVisitadas.length === trivia.length) {
         contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas!</p>";
