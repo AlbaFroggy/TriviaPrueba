@@ -20,6 +20,52 @@
         "respuesta": "Leonardo da Vinci"
     },
     {
+        "pregunta": "¿Cuál es el sistema operativo de código abierto más utilizado?",
+        "opciones": [
+            "Windows",
+            "Linux",
+            "macOS",
+            "Android"
+        ],
+        "respuesta": "Linux"
+    },{
+        "pregunta": "¿En qué movimiento artístico se enmarca la obra 'Guernica' de Pablo Picasso?",
+        "opciones": [
+            "Cubismo",
+            "Expresionismo",
+            "Surrealismo",
+            "Realismo"
+        ],
+        "respuesta": "Cubismo"
+    },{
+        "pregunta": "¿Qué pintor impresionista se destaca por su serie de pinturas de nenúfares?",
+        "opciones": [
+            "Vincent van Gogh",
+            "Claude Monet",
+            "Paul Cézanne",
+            "Édouard Manet"
+        ],
+        "respuesta": "Claude Monet"
+    },{
+        "pregunta": "¿Qué movimiento artístico se basa en la representación de lo irracional, lo subconsciente y los sueños?",
+        "opciones": [
+            "Cubismo",
+            "Expresionismo",
+            "Futurismo",
+            "Surrealismo"
+        ],
+        "respuesta": "Surrealismo"
+    },{
+        "pregunta": "¿Qué movimiento artístico del siglo XIX se caracteriza por su representación idealizada de la naturaleza y la vida en contraposición al realismo de la época?",
+        "opciones": [
+            "Realismo",
+            "Romanticismo",
+            "Impresionismo",
+            "Rococó"
+        ],
+        "respuesta": "Romanticismo"
+    },
+    {
         "pregunta": "¿Quién escribió el famoso ensayo «Una habitación propia»?",
         "opciones": [
             "Franz Kafka",
@@ -263,5 +309,15 @@
             "La riqueza es siempre visible"
         ],
         "respuesta": "No todo lo que parece bueno lo es"
+    },
+    {
+        "pregunta": "Única pregunta personal: ¿cuál es el movimiento artístico favorito de Alba?",
+        "opciones": [
+            "Romanticismo",
+            "Tonalismo",
+            "Orfismo",
+            "Prerrafaelismo"
+        ],
+        "respuesta": "Prerrafaelismo"
     }
 ]
