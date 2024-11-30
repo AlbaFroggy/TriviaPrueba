@@ -32,31 +32,33 @@ window.addEventListener("load", () => {
     }
 // Mostrar una pregunta al azar sin repetir con el temporizador y las opciones
 function mostrarPregunta() {
-    if (trivia.length === 0 || preguntasVisitadas.length === trivia.length) {
-        contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas!</p>";
+    // Verificar si ya no hay más preguntas disponibles
+    if (preguntasVisitadas.length === trivia.length) {
+        contenedorTrivia.innerHTML = "<p>¡Ya no hay más preguntas disponibles!</p>";
         return;
     }
 
     // Ocultar el botón de "Generar Pregunta" mientras se muestra la trivia
     btnGenerar.style.display = 'none';
 
-    // Seleccionamos una pregunta no visitada al azar
+    // Elegir una pregunta aleatoria que no haya sido visitada
     let indiceAleatorio;
     do {
         indiceAleatorio = Math.floor(Math.random() * trivia.length);
-    } while (preguntasVisitadas.includes(indiceAleatorio)); // Evitar repetir preguntas
+    } while (preguntasVisitadas.includes(indiceAleatorio));
 
-    preguntaActual = trivia[indiceAleatorio];
-
-    // Marcar esta pregunta como visitada
+    // Marcar la pregunta como visitada
     preguntasVisitadas.push(indiceAleatorio);
+
+    // Obtener la pregunta actual
+    preguntaActual = trivia[indiceAleatorio];
 
     // Barajar las opciones de respuesta aleatoriamente
     const opcionesAleatorias = preguntaActual.opciones.sort(() => Math.random() - 0.5);
 
     const opcionesHTML = opcionesAleatorias
         .map(opcion => `<button class="opcion">${opcion}</button>`)
-        .join(''); // Crear el HTML de las opciones
+        .join('');
 
     contenedorTrivia.innerHTML = `
         <p>${preguntaActual.pregunta}</p>
@@ -67,12 +69,12 @@ function mostrarPregunta() {
     `;
 
     // Mostrar el contenedor de trivia después de cargar la pregunta
-    contenedorTrivia.style.display = 'block'; // Mostrar el contenedor
+    contenedorTrivia.style.display = 'block';
 
     // Iniciar el temporizador
     iniciarTemporizador();
-
 }
+
 
     // Iniciar el temporizador
     function iniciarTemporizador() {
@@ -211,8 +213,10 @@ function mostrarPregunta() {
     // Registrar eventos
     btnGenerar.addEventListener('click', mostrarPregunta);
     contenedorTrivia.addEventListener('click', verificarRespuesta);
-    btnMasPreguntas.addEventListener('click', reiniciarJuego); // Evento para el botón de más preguntas
-
+    btnMasPreguntas.addEventListener('click', () => {
+        mostrarPregunta();
+    });
+    
     // Cargar las preguntas al inicio
     cargarTrivia();
 });
