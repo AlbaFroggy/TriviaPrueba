@@ -88,7 +88,9 @@ button.opcion:active {
     background-color: #e0814f; /* Caramelo más oscuro */
     transform: scale(0.98);
 }
-
+#resultado{
+    font-size: 1.5em;
+}
 /* Estilo para respuestas correctas */
 #resultado.correcto {
     color: #f4a261; /* Color caramelo */
