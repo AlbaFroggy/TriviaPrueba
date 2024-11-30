@@ -11,6 +11,7 @@ body {
     margin: 0;
     overflow: auto; /* Para manejar el desbordamiento en pantallas pequeñas */
 }
+
 /* Título */
 h1 {
     font-size: 2.5em;
@@ -18,7 +19,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Contenedor principal de trivia */
 /* Contenedor principal de trivia */
 #trivia {
     display: none; /* Inicialmente oculto */
@@ -33,7 +33,6 @@ h1 {
     margin-bottom: 20px;
     position: relative;
 }
-
 
 /* Contenedor para los resultados */
 #resultado {
@@ -127,32 +126,33 @@ button.opcion:active {
 /* Diseño para pantalla móvil */
 @media (max-width: 600px) {
     h1 {
-        font-size: 2em;
+        font-size: 2.2em; /* Aumentar el tamaño del título */
+        margin-bottom: 15px; /* Reducir espacio debajo del título */
     }
 
     #trivia {
-        padding: 15px;
-        width: 90%;
+        padding: 20px;
+        width: 90%; /* Asegurar que ocupe casi todo el ancho */
     }
 
     #generar-trivia, #mas-preguntas {
-        font-size: 1em;
-        padding: 12px 20px;
+        font-size: 1.1em; /* Aumentar el tamaño del texto en botones */
+        padding: 14px 24px;
     }
 
     button.opcion {
-        font-size: 1em;
-        padding: 10px 15px;
+        font-size: 1.1em;
+        padding: 14px 22px; /* Mejorar el espaciado de los botones */
     }
 
     #resultado, #contador, #temporizador {
-        font-size: 1em;
+        font-size: 1.2em; /* Aumentar el tamaño de fuente */
         margin-top: 10px;
         width: 100%; /* Asegura que ocupen todo el ancho en pantallas pequeñas */
         text-align: center; /* Centramos también en pantallas pequeñas */
     }
 
     #resultado, #contador {
-        margin-top: 10px;
+        margin-top: 15px; /* Aumentar el espacio entre elementos */
     }
 }
