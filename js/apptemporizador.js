@@ -1,9 +1,9 @@
-window.addEventListener("load", () => {
+window.addEventListener("load", () => { 
     const btnGenerar = document.querySelector('#generar-trivia');
     const contenedorTrivia = document.querySelector('#trivia');
     const resultado = document.querySelector('#resultado');
     const contador = document.querySelector('#contador');
-    const btnMasPreguntas = document.querySelector('#mas-preguntas'); // Botón de más preguntas
+    const btnReiniciar = document.querySelector('#reiniciar-juego'); // Botón de reiniciar
     const urlTrivia = 'JSON/trivia.json'; // Ruta del archivo JSON
 
     let trivia = [];
@@ -30,6 +30,7 @@ window.addEventListener("load", () => {
             contenedorTrivia.textContent = "No se pudieron cargar las preguntas. Intenta de nuevo más tarde.";
         }
     }
+
     // Mostrar una pregunta al azar sin repetir con el temporizador y las opciones
     function mostrarPregunta() {
         // Verificar si ya no hay más preguntas disponibles
@@ -78,7 +79,6 @@ window.addEventListener("load", () => {
         // Iniciar el temporizador
         iniciarTemporizador();
     }
-
 
     // Iniciar el temporizador
     function iniciarTemporizador() {
@@ -148,12 +148,14 @@ window.addEventListener("load", () => {
             // Mostrar el resultado
             if (respuestaUsuario === preguntaActual.respuesta) {
                 resultado.className = "";
+                resultado.innerHTML = ""; 
                 resultado.textContent = "✨✨¡Correcto!✨✨";
                 resultado.style.color = "green";
                 respuestasCorrectas++;
             } else {
                 resultado.className = "";
-                resultado.innerHTML = `💥💥Incorrecto.💥💥`;
+                resultado.innerHTML = ""; 
+                resultado.innerHTML = `💥💥Incorrecto💥💥`;
                 resultado.style.color = "red";
                 respuestasIncorrectas++
             }
@@ -188,7 +190,6 @@ window.addEventListener("load", () => {
         `;
     }
 
-
     // Finalizar el juego y mostrar el mensaje de victoria o derrota
     function terminarJuego(mensaje) {
         contenedorTrivia.innerHTML = `
@@ -200,30 +201,29 @@ window.addEventListener("load", () => {
         // Ocultar el botón de Generar Pregunta
         btnGenerar.style.display = 'none';  // Ocultar el botón de generar pregunta
 
-        // Mostrar el botón de más preguntas
-        btnMasPreguntas.style.display = 'block'; // Mostrar el botón de más preguntas
+        // Mostrar el botón de reiniciar juego
+        btnReiniciar.style.display = 'block'; // Mostrar el botón de reiniciar
     }
 
     // Recargar el juego con más preguntas
     function reiniciarJuego() {
-        // Mantener el array preguntasVisitadas hasta que se agoten las preguntas
-        respuestasCorrectas = 0; // Reiniciar contador de respuestas correctas
-        respuestasIncorrectas = 0; // Reiniciar contador de respuestas incorrectas
+        // Reiniciar variables
+        respuestasCorrectas = 0;
+        respuestasIncorrectas = 0;
+        preguntasVisitadas = [];
 
         btnGenerar.style.display = 'block'; // Mostrar el botón de generar preguntas
         btnGenerar.disabled = false; // Habilitar el botón de generar preguntas
-        btnMasPreguntas.style.display = 'none'; // Ocultar el botón de más preguntas
+        btnReiniciar.style.display = 'none'; // Ocultar el botón de reiniciar
 
         actualizarContador(); // Actualizar el contador
         mostrarPregunta(); // Mostrar una nueva pregunta
     }
 
-
     // Registrar eventos
     btnGenerar.addEventListener('click', mostrarPregunta);
     contenedorTrivia.addEventListener('click', verificarRespuesta);
-    btnMasPreguntas.addEventListener('click', reiniciarJuego);
-
+    btnReiniciar.addEventListener('click', reiniciarJuego); // Evento para reiniciar el juego
 
     // Cargar las preguntas al inicio
     cargarTrivia();
