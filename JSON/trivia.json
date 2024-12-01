@@ -28,7 +28,8 @@
             "Android"
         ],
         "respuesta": "Linux"
-    },{
+    },
+    {
         "pregunta": "¿En qué movimiento artístico se enmarca la obra «Guernica» de Pablo Picasso?",
         "opciones": [
             "Cubismo",
@@ -37,7 +38,8 @@
             "Realismo"
         ],
         "respuesta": "Cubismo"
-    },{
+    },
+    {
         "pregunta": "¿Qué pintor impresionista se destaca por su serie de pinturas de nenúfares?",
         "opciones": [
             "Vincent van Gogh",
@@ -46,7 +48,8 @@
             "Édouard Manet"
         ],
         "respuesta": "Claude Monet"
-    },{
+    },
+    {
         "pregunta": "¿Qué movimiento artístico se basa en la representación de lo irracional, lo subconsciente y los sueños?",
         "opciones": [
             "Cubismo",
@@ -55,7 +58,8 @@
             "Surrealismo"
         ],
         "respuesta": "Surrealismo"
-    },{
+    },
+    {
         "pregunta": "¿Qué movimiento artístico del siglo XIX se caracteriza por su representación idealizada de la naturaleza y la vida en contraposición al realismo de la época?",
         "opciones": [
             "Realismo",
@@ -69,22 +73,23 @@
         "pregunta": "¿Quién escribió el famoso ensayo «Una habitación propia»?",
         "opciones": [
             "Franz Kafka",
-          "Simone de Beauvoir",
-          "Virginia Woolf",
-          "F. Scott Fitzgerald"
+            "Simone de Beauvoir",
+            "Virginia Woolf",
+            "F. Scott Fitzgerald"
         ],
         "respuesta": "Virginia Woolf"
-      },      
+    },
     {
         "pregunta": "¿En qué año llegó el ser humano a la Luna?",
         "opciones": [
             "1959",
-            "1969",            
+            "1969",
             "1971",
             "1980"
         ],
         "respuesta": "1969"
-    },{
+    },
+    {
         "pregunta": "¿Qué evento en Nueva York en 1969 se considera el punto de partida del movimiento moderno por los derechos LGBT+?",
         "opciones": [
             "La Marcha del Orgullo",
@@ -93,7 +98,8 @@
             "La primera cabalgata LGBT"
         ],
         "respuesta": "Los disturbios de Stonewall"
-    }, {
+    },
+    {
         "pregunta": "¿Qué país europeo fue el primero en permitir el matrimonio entre personas del mismo sexo?",
         "opciones": [
             "Francia",
@@ -102,7 +108,8 @@
             "Suecia"
         ],
         "respuesta": "Países Bajos"
-    }, {
+    },
+    {
         "pregunta": "¿Qué significa la sigla «LGBT»?",
         "opciones": [
             "Lesbianas, Gays, Bisexuales y Transgéneros",
@@ -131,7 +138,8 @@
             "Betty Friedan"
         ],
         "respuesta": "Simone de Beauvoir"
-    },{
+    },
+    {
         "pregunta": "¿Qué significa el término «feminismo interseccional»?",
         "opciones": [
             "La lucha por la igualdad de género",
@@ -140,7 +148,8 @@
             "El feminismo que solo lucha por los derechos de las mujeres blancas"
         ],
         "respuesta": "La idea de que la opresión se cruza con otras formas de discriminación"
-    },{
+    },
+    {
         "pregunta": "¿Quién fue la primera mujer en viajar al espacio?",
         "opciones": [
             "Valentina Tereshkova",
